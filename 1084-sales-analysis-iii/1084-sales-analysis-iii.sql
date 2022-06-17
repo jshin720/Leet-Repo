@@ -9,5 +9,4 @@ select distinct product.product_id, product.product_name
             from sales
             where sale_date not between '2019-01-01' and '2019-03-31'
     )
-   group by product.product_id
-    
+  
