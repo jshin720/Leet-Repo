@@ -4,13 +4,13 @@
  */
 var numberOfSteps = function(num) {
     let steps = 0;
-    let newNum = num;
     
-    while (newNum > 0) {
-        if (newNum % 2 === 0) {
-            newNum = newNum / 2;
+    
+    while (num > 0) {
+        if (num % 2 === 0) {
+            num = num / 2;
         } else {
-            newNum--
+            num--
         }
         steps++
     }
