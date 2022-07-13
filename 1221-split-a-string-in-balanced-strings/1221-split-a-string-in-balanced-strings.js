@@ -8,9 +8,9 @@ var balancedStringSplit = function(s) {
     let lCount = 0;
         
     for (let i = 0; i < s.length; i++) {
-        s[i] === "R" ? rCount++ : rCount
-        s[i] === "L" ? lCount++ : lCount
-        rCount === lCount ? count++ : count
+        s[i] === "R" && rCount++;
+        s[i] === "L" && lCount++;
+        rCount === lCount && count++;
     }
     return count
 };
