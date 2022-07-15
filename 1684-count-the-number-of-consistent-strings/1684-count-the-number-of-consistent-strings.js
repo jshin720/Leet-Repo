@@ -15,7 +15,7 @@ var countConsistentStrings = function(allowed, words) {
                 break
             }
         }
-        letter ? strCount++ : strCount; 
+        letter && strCount++; 
     })
     return strCount; 
 };
