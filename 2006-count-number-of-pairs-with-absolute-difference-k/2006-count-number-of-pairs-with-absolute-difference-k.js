@@ -8,7 +8,7 @@ var countKDifference = function(nums, k) {
     
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] - nums[j] === k || nums[j] - nums[i] === k ) output++
+            if (Math.abs(nums[i] - nums[j]) === k) output++
         }
     }
     return output;
