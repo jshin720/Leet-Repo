@@ -7,17 +7,15 @@ var countConsistentStrings = function(allowed, words) {
     let strCount = 0;
     
     words.forEach(word => {
-        let letterCount = 0;
+        let letter = true;
         for (let char of word) {
             
-            if (allowed.includes(char)) {
-                letterCount++
-            } else {
-                letterCount = 0;
+            if (!allowed.includes(char)) {
+                letter = false;
                 break
             }
         }
-        letterCount >= 1 ? strCount++ : strCount; 
+        letter ? strCount++ : strCount; 
     })
     return strCount; 
 };
