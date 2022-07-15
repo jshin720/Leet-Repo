@@ -4,20 +4,25 @@
  * @return {string}
  */
 var decodeMessage = function(key, message) {
-    let alpha = "abcdefghijklmnopqrstuvwxyz".split("");
-    let newKey = key.split(" ").join("");
-    let uniqueKeys = [... new Set(newKey)];
-    let decodedMessage = "";
+//     let alpha = "abcdefghijklmnopqrstuvwxyz".split("");
+//     let newKeys = [... new Set( key.split(" ").join(""))];
+//     let decodedMessage = "";
     
-    for (let i = 0; i < message.length; i++) {
-        let idx = uniqueKeys.indexOf(message[i]);
-        if (idx !== -1) {
-            decodedMessage += alpha[idx];
-        } else {
-            decodedMessage += " "
-        }
+//     for (let i = 0; i < message.length; i++) {
+//         let idx = newKeys.indexOf(message[i]);
+//         if (idx !== -1) {
+//             decodedMessage += alpha[idx];
+//         } else {
+//             decodedMessage += " "
+//         }
         
-    }
-    return decodedMessage;
+//     }
+//     return decodedMessage;
+    const letters = `abcdefghijklmnopqrstuvwxyz`;
+    const modKey = [...new Set(key.replaceAll(` `, ``).split(``))];
+    
+    const map = modKey.reduce((m, l, i) => (m[l] = letters[i], m), {});
+  console.log(map)
+    return message.split(``).map(w => w in map ? map[w] : w).join(``);
     
 };
