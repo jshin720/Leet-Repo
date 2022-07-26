@@ -14,7 +14,7 @@ var getDecimalValue = function(head) {
     let output = "";
     
     while (current) {
-        console.log(current.val)
+       
         output += current.val;
         current = current.next;
     }
