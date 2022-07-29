@@ -3,17 +3,15 @@
  * @return {string}
  */
 var replaceDigits = function(s) {
-    let replaced = "";
+    s = s.split("");
     
     for (let i = 0; i < s.length; i++) {
         
-       if (i % 2 === 0) {
-           replaced += s[i]
-       } else {
+       if (i % 2 !== 0) {
           const idx = parseInt(s[i - 1].charCodeAt(0)) + parseInt(s[i])
-          replaced += String.fromCharCode(idx)
+          s[i] = String.fromCharCode(idx)
        }
     }
-    return replaced;
+    return s.join("");
 };
 
