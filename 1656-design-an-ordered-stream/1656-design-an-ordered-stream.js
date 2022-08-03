@@ -2,7 +2,6 @@
  * @param {number} n
  */
 var OrderedStream = function(n) {
-    this.n = n;
     this.pointer = 1;
     this.temp = {};
     
