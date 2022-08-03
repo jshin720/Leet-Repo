@@ -6,8 +6,8 @@
 var reversePrefix = function(word, ch) {
     let idx = word.indexOf(ch) + 1;
     
-    // if(!idx) return word;
+    let wordArr = [...word]
     
-    return word.slice(0, idx).split("").reverse().join("") + word.slice(idx);
+    return wordArr.slice(0, idx).reverse().join("") + word.slice(idx);
     
 };
