@@ -4,10 +4,10 @@
  * @return {string}
  */
 var reversePrefix = function(word, ch) {
-    let idx = word.indexOf(ch);
+    let idx = word.indexOf(ch) + 1;
     
-    if(!idx) return word;
+    // if(!idx) return word;
     
-    return word.slice(0, idx + 1).split("").reverse().join("") + word.slice(idx + 1);
+    return word.slice(0, idx).split("").reverse().join("") + word.slice(idx);
     
 };
