@@ -8,7 +8,7 @@ var targetIndices = function(nums, target) {
     let indices = [];
     
     for (let i = 0; i < nums.length; i++){
-        nums[i] === target ? indices.push(i) : indices;
+        nums[i] === target && indices.push(i);
     }
     
     return indices;
