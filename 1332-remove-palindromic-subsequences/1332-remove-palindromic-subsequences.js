@@ -13,6 +13,6 @@ var removePalindromeSub = function(s) {
     } else if (s.slice(0, -1).join("") === s.slice(0, -1).reverse().join("")) {
         return removePalindromeSub(s.slice(0, -1).join("")) + 1;
     } else {
-        return [...new Set(s)].length;
+        return 2;
     }
 };
