@@ -5,10 +5,10 @@
  */
 var mergeAlternately = function(word1, word2) {
     let merged = "";
-    let wordlength = word1.length <= word2.length ? word1.length : word2.length;
+    let wordLength = Math.min(word1.length, word2.length);
     let i = 0;
     
-    while (i < wordlength) {
+    while (i < wordLength) {
         merged += word1[i] + word2[i];
         
         i++;
