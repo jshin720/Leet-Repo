@@ -12,6 +12,6 @@ var divideArray = function(nums) {
             set.add(num);
         }
     }
-    console.log(set)
+
     return set.size === 0;
 };
