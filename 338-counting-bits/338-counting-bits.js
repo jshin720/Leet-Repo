@@ -6,18 +6,14 @@ var countBits = function(n) {
     const count = [];
     let i = 0;
     while (i <= n) {
-        count.push(i.toString(2))
+        let bitCount = i
+            .toString(2)
+            .split("")
+            .filter((num) => num === "1").length;
+        count.push(bitCount)
         i++;
     }
     
-    
-   return count.map((num) => {
-        let bitCount = 0;
-        for (let i = 0; i < num.length; i++) {
-           
-            num[i] === '1' && bitCount++
-        }
-        return bitCount;
-    })
+    return count;
     
 };
