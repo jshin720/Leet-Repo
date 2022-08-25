@@ -11,7 +11,7 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
         for (let i in word) {
             sum[i] = word[i].charCodeAt() - 97;
         }
-          console.log(sum)
+        
         return Number(sum.join(""));
     }
     
