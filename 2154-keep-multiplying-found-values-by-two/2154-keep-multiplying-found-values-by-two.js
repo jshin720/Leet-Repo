@@ -4,7 +4,7 @@
  * @return {number}
  */
 var findFinalValue = function(nums, original) {
-    if (!nums.includes(original)) return original;
+    // if (!nums.includes(original)) return original;
     
     while (nums.includes(original)) {
         original = original * 2;
