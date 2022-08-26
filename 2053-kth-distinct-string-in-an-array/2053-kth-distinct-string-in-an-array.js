@@ -22,5 +22,5 @@ var kthDistinct = function(arr, k) {
         if (count[char] === 1) distinct.push(char);
     }
     
-    return !distinct[k - 1] ? "" : distinct[k - 1];
+    return distinct[k - 1] || "";
 }; 
