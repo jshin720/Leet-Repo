@@ -9,7 +9,7 @@ var canBeEqual = function(target, arr) {
     for (let num of target) {
         !isEqual[num] ? isEqual[num] = 1 : isEqual[num]++;    
     };
-    console.log(isEqual)
+   
     for (let num of arr) {
         if (!isEqual[num]) {
             return false;
