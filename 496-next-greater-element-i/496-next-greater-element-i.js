@@ -8,19 +8,17 @@ var nextGreaterElement = function(nums1, nums2) {
     
     for (let num of nums1) {
         const idx = nums2.indexOf(num);
-        let noGreater = 0;
+        let noGreater = false;
         
         for (let i = idx; i < nums2.length; i++) {
            
             if (nums2[i] > num) {
                 nextGreater.push(nums2[i]);
-                noGreater = 0;
-                break;
-            } else {
-                noGreater++;
+                noGreater = true;
+                break
             }
         }
-        if (noGreater > 0) nextGreater.push(-1);
+        if (!noGreater) nextGreater.push(-1);
     }
     return nextGreater;
 };
