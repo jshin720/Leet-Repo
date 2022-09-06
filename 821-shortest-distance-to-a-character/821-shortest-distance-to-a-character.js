@@ -17,8 +17,8 @@ var shortestToChar = function(s, c) {
        if (s[i] === c) cIdx.push(i);
     } 
 
-    for (let i in s) {
-        let minNum = shortest(i, cIdx);
+    for (let j in s) {
+        let minNum = shortest(j, cIdx);
         answer.push(minNum)
     }
     return answer;
