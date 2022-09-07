@@ -4,7 +4,7 @@
  * @return {string[]}
  */
 var findRestaurant = function(list1, list2) {
-    let indices = {};
+    const indices = {};
     
     for (let i in list1) {
         let idx = list2.indexOf(list1[i]);
@@ -14,7 +14,7 @@ var findRestaurant = function(list1, list2) {
     const min =  Math.min(...Object.values(indices));
     
     
-    let minIndex = [];
+    const minIndex = [];
     
     for (let word in indices) {
         if (indices[word] === min) minIndex.push(word);
