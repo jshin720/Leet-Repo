@@ -4,16 +4,15 @@
  */
 var diStringMatch = function(s) {
     const result = [];
-    let dS = s.length;
-    let iS = 0;
+    let end = s.length, front = 0;
     
     for (let i = 0; i <= s.length; i++){
         if (s[i] === "I") {
-          result.push(iS);
-          iS++;  
+          result.push(front);
+          front++;  
         } else {
-            result.push(dS);
-            dS--;
+            result.push(end);
+            end--;
         }
     }
   return result;
