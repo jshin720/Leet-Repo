@@ -5,6 +5,7 @@
  */
 var countBalls = function(lowLimit, highLimit) {
     const boxes = {};
+    let max = 0;
     
     for (let balls = lowLimit; balls <= highLimit; balls++) {
         let sum = 0;
@@ -14,10 +15,11 @@ var countBalls = function(lowLimit, highLimit) {
          
         };
         !boxes[sum] ? boxes[sum] = 1 : boxes[sum]++;
+        if (boxes[sum] > max) max = boxes[sum];
         sum = 0;
         
     }
     
-   return Math.max(...Object.values(boxes))
+   return max;
     
 };
