@@ -28,4 +28,21 @@ var invertTree = function(root) {
     reverse(root);
     
     return root;
+    
+//     if (!root) return null;
+//     const node = root;
+    
+    
+//     while (node) {
+            
+//         const left = node.left;
+//         const right = node.right;
+        
+//         node.left = right;
+//         node.right = left;
+        
+//         console.log(root)
+//     }
+    
+//     return root;
 };
