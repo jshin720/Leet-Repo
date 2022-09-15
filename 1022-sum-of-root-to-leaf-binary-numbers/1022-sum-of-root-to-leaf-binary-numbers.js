@@ -24,8 +24,8 @@ var sumRootToLeaf = function(root) {
             sum += parseInt(val, 2);
         }
         
-        node.left && dfs(node.left, val);
-        node.right && dfs(node.right, val);
+       dfs(node.left, val);
+      dfs(node.right, val);
     }
     
     root && dfs(root);
