@@ -18,14 +18,14 @@ var sumRootToLeaf = function(root) {
     const dfs = (node, val = '') => {
         if (!node) return;
         
-        val += node.val;
+        val += node.val; // 1 1 1 0
        
         if (!node.left && !node.right) {
             sum += parseInt(val, 2);
         }
         
        dfs(node.left, val);
-      dfs(node.right, val);
+       dfs(node.right, val);
     }
     
     dfs(root);
