@@ -11,7 +11,7 @@
  * @return {number}
  */
 var sumRootToLeaf = function(root) {
-    // if (!root) return 0;
+    if (!root) return 0;
     
     let sum = 0;
     
@@ -28,6 +28,6 @@ var sumRootToLeaf = function(root) {
       dfs(node.right, val);
     }
     
-    root && dfs(root);
+    dfs(root);
     return sum;
 };
