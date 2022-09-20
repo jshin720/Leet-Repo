@@ -32,4 +32,14 @@ var maxDepth = function(root) {
       
     }
   return depth;
+//     let max = 0;
+// console.log("before", max)
+//     root.children.forEach((child) => {
+//         console.log("child", child)
+        
+//       max = Math.max(max, maxDepth(child));
+//         console.log("inner-max", max)
+//     });
+// console.log("after", max)
+//     return max + 1;
 };
