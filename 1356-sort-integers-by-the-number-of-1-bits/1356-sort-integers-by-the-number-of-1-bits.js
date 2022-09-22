@@ -4,7 +4,7 @@
  */
 var sortByBits = function(arr) {
     const binaryCount = binaryObj(arr);
-    console.log(binaryCount)
+   
    let flag = false;
     
     while (!flag) {
@@ -12,7 +12,7 @@ var sortByBits = function(arr) {
         
         for (let i = 0; i < arr.length - 1; i++) {
             let temp = arr[i]
-             // console.log(arr);
+             
             if (binaryCount[arr[i]] > binaryCount[arr[i + 1]]) {
                 arr[i] = arr[i + 1];
                 arr[i + 1] = temp;
