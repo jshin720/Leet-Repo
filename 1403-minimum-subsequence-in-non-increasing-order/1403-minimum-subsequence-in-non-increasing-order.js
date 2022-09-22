@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 var minSubsequence = function(nums) {
-    let total = nums.reduce((a, b) => a + b, 0) / 2;
+    let total = nums.reduce((a, b) => a + b, 0);
     nums.sort((a, b) => b - a);
    
     const res = [];
@@ -14,7 +14,7 @@ var minSubsequence = function(nums) {
         sum += nums[i];
         res.push(nums[i]);
        
-        if (sum > total) return res; 
+        if (sum > (total- sum)) return res; 
     }
    
     
