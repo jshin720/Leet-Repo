@@ -9,8 +9,6 @@ var countWords = function(words1, words2) {
     
     const dupes2 = noDupes(words2);
     
-    console.log(dupes1)
-    console.log(dupes2, "d2")
     
     for (let i = 0; i < words1.length; i++) {
         if(dupes1[words1[i]] === 1 && dupes2[words1[i]] === 1) count++;
