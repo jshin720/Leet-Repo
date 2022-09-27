@@ -41,7 +41,7 @@ var commonChars = function(words) {
  let common = words[0].split('').filter(char => {
       
         for (var i = 1; i < words.length; i++) {
-            console.log(words[i])
+         
             if (!words[i].includes(char)) return false;
             else {
                 words[i] = words[i].replace(char, '')
@@ -51,21 +51,21 @@ var commonChars = function(words) {
         return true;
      
     })
- console.log("main", common)
+ // console.log("main", common)
 	return common
 };
     
 
 
-const lettersCount = (word) => {
-    const count = {};
+// const lettersCount = (word) => {
+//     const count = {};
     
-    for (let char of word) {
-        if (!count[char]) {
-            count[char] = 1;
-        } else {
-            count[char]++;
-        };
-    };
-    return count; 
-};
+//     for (let char of word) {
+//         if (!count[char]) {
+//             count[char] = 1;
+//         } else {
+//             count[char]++;
+//         };
+//     };
+//     return count; 
+// };
