@@ -7,9 +7,9 @@ var intersection = function(nums) {
     
     const intersect = firstNums.filter((num) => {
         // let j = 0;
-        console.log("num", num)
+        // console.log("num", num)
         for (let i = 1; i < nums.length; i++) {
-            console.log("otherNum", nums[i])
+            // console.log("otherNum", nums[i])
             if (!nums[i].includes(num)) {
                 return false;
             }
