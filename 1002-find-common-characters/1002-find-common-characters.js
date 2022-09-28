@@ -4,9 +4,9 @@
  */
 var commonChars = function(words) {
     const common = words[0].split("").filter((char) => {
-        console.log("char", char)
+        // console.log("char", char)
         for (let i = 1; i < words.length; i++) {
-            console.log("words", words[i], i)
+            // console.log("words", words[i], i)
             if (!words[i].includes(char)){
                 return false;
             } else {
