@@ -3,7 +3,7 @@
  * @return {number[]}
  */
 var intersection = function(nums) {
-    const firstNums = nums[0];
+    const firstNums = nums[0].sort((a, b) => a - b);
     
     const intersect = firstNums.filter((num) => {
         // let j = 0;
@@ -17,5 +17,5 @@ var intersection = function(nums) {
         // j = 0;
         return true;
     })
-   return intersect.sort((a, b) => a - b);
+   return intersect;
 };
