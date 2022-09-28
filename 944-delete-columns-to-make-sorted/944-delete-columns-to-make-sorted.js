@@ -41,7 +41,7 @@ var minDeletionSize = function(strs) {
     for (let i = 0; i < strs[0].length; i++) {
         for (let j = 1; j < strs.length; j++) {
             if (strs[j][i] < strs[j-1][i]) {
-                num ++;
+                num ++; // everytime is hits a letter where the previous letter is greater it breaks out and num++(deletion)
                 break;
             }
         }
