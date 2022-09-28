@@ -20,7 +20,7 @@ var intersection = function(nums) {
 //    return intersect;
     const intersect = {};
     const flatten = nums.flat();
-    console.log(flatten)
+    // console.log(flatten)
     
     for (let i = 0; i < flatten.length; i++) {
         if(!intersect[flatten[i]]) {
