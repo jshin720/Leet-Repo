@@ -14,8 +14,8 @@ var findMiddleIndex = function(nums) {
         
         
         
-        console.log("rs", rightSum);
-        console.log("ls", leftSum)
+        // console.log("rs", rightSum);
+        // console.log("ls", leftSum)
     }
     
     return -1;
