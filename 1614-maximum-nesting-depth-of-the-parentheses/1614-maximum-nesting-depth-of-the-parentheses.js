@@ -20,7 +20,7 @@ var maxDepth = function(s) {
         if (s[i] === "(") depth++;
         if (s[i] === ")") depth--;
         
-        depth > maxDepth ? maxDepth = depth : maxDepth;
+        maxDepth = Math.max(depth, maxDepth)
     } 
     
     return maxDepth
