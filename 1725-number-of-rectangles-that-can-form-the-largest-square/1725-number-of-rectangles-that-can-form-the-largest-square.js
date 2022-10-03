@@ -3,19 +3,16 @@
  * @return {number}
  */
 var countGoodRectangles = function(rectangles) {
-      let arr = []
-  let count = 0;
-  let max = 0;
-  let i = 0;
-  rectangles.forEach(e => {
-    arr.push(Math.min(e[0], e[1]));
-    if (arr[i]> max){
-      max = arr[i]
-      count = 1;
-    } else if (arr[i]===max){
-      count ++;
+ 
+    
+    const largestSq = rectangles.map((rectangle) => Math.min(rectangle[0], rectangle[1]));
+                               
+    const maxSize = Math.max(...largestSq);
+    
+    let count = 0;
+    
+    for (let sq of largestSq) {
+        if(sq === maxSize) count++;
     }
-    i++;
-  });
-  return count;
+    return count; 
 };
