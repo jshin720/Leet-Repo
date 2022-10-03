@@ -11,10 +11,10 @@ var firstPalindrome = function(words) {
 }
 
 const isEqual = (word) => {
-    const revWord = word.split("").reverse().join("");
+    // const revWord = word.split("").reverse().join("");
     
     for (let i = 0;i < word.length; i++) {
-        if (word[i] !== revWord[i]) return false;
+        if (word[i] !== word[word.length - 1 - i]) return false;
     }
     return true;
 }
