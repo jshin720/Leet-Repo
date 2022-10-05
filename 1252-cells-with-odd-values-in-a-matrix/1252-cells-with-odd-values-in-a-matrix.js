@@ -9,7 +9,7 @@ var oddCells = function(m, n, indices) {
     let count = 0;
     
     for (let i in indices) {
-        let [r, c] = indices[i];
+        let [r, c] = indices[i]; // same as let r = indices[i][0]; let c = indices[i][1]; 
         // console.log("c", c);
        
         for (let j = 0; j < n; j++) {
