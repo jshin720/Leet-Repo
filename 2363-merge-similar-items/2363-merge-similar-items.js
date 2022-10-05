@@ -6,6 +6,7 @@
 var mergeSimilarItems = function(items1, items2) {
     const similar = {};
     const items = items1.concat(items2)
+    
     for (let i = 0; i < items.length; i++) {
         const [v, w] = items[i];
         
