@@ -5,9 +5,9 @@
  */
 var mergeSimilarItems = function(items1, items2) {
     const similar = {};
-    
-    for (let i = 0; i < items1.length; i++) {
-        const [v, w] = items1[i];
+    const items = items1.concat(items2)
+    for (let i = 0; i < items.length; i++) {
+        const [v, w] = items[i];
         
         if (!similar[v]) {
             similar[v] = w;
@@ -16,15 +16,15 @@ var mergeSimilarItems = function(items1, items2) {
         }
     }
     
-    for (let i = 0; i < items2.length; i++) {
-        const [v, w] = items2[i];
+//     for (let i = 0; i < items2.length; i++) {
+//         const [v, w] = items2[i];
         
-        if (!similar[v]) {
-            similar[v] = w;
-        } else {
-            similar[v] += w;
-        }
-    }
+//         if (!similar[v]) {
+//             similar[v] = w;
+//         } else {
+//             similar[v] += w;
+//         }
+//     }
    
     return Object.entries(similar);
 };
