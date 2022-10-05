@@ -5,19 +5,28 @@
  * @return {number}
  */
 var oddCells = function(m, n, indices) {
-var mat = [];
+    const matrix = new Array(m).fill(0).map(() => new Array(n).fill(0));
     let count = 0;
-    for (let i = 0; i < m; ++i) mat[i] = new Uint8Array(n);
-        for (let i = 0; i < indices.length; ++i) {
-            const [r, c] = indices[i];
-            for (let j = 0; j < n; ++j) ++mat[r][j];
-            for (let j = 0; j < m; ++j) ++mat[j][c];
+    
+    for (let i in indices) {
+        let [r, c] = indices[i];
+        // console.log("c", c);
+       
+        for (let j = 0; j < n; j++) {
+            
+            matrix[r][j]++
+            // console.log("with r",matrix)
         }
-
-        for (let i = 0; i < m; ++i) {
-            for (let j = 0; j < n; ++j) {
-                 if (mat[i][j] % 2 === 1) ++count;
-            }
+        
+        for (let k = 0; k < m; k++) { // hits the indices in the new arr -- [0,1],[1,1]
+        // console.log("k", [k, c])
+            matrix[k][c]++
+            // console.log("with c",matrix)
+        }
     }
+    
+    matrix.flat().forEach((num) => {if (num % 2 !== 0) count++})
+    
     return count;
+    
 };
