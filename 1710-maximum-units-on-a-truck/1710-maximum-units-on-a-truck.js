@@ -28,20 +28,29 @@ var maximumUnits = function(boxTypes, truckSize) {
     let total = 0;
     // console.log(boxTypes)
     
-    for (let boxType of boxTypes) {
-        // console.log(boxType)
+//     for (let boxType of boxTypes) {
+//         // console.log(boxType)
         
-        const numBoxes = boxType[0];
-        const unit = boxType[1];
-        console.log("truckSize", truckSize)
-        if (numBoxes <= truckSize) {
-            total += numBoxes * unit;
-            truckSize -= numBoxes;
-        } else {
-            total += truckSize * unit;
-            truckSize = 0;
-        }
+//         const numBoxes = boxType[0];
+//         const unit = boxType[1];
+//         console.log("truckSize", truckSize)
+//         if (numBoxes <= truckSize) {
+//             total += numBoxes * unit;
+//             truckSize -= numBoxes;
+//         } else {
+//             total += truckSize * unit;
+//             truckSize = 0;
+//         }
+//         console.log(total)
+//     } 
+//     return total;
+    
+    boxTypes.forEach((boxType) => {
+        let ship = boxType[0] < truckSize ? boxType[0] : truckSize;
+        truckSize -= ship
+        total += ship * boxType[1];
         console.log(total)
-    } 
+    })
+    
     return total;
 };
