@@ -49,7 +49,7 @@ var maximumUnits = function(boxTypes, truckSize) {
         let ship = boxType[0] < truckSize ? boxType[0] : truckSize;
         truckSize -= ship
         total += ship * boxType[1];
-        console.log(total)
+        // console.log(total)
     })
     
     return total;
