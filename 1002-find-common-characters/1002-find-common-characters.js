@@ -3,6 +3,21 @@
  * @return {string[]}
  */
 var commonChars = function(words) {
+    const common = words[0].split("").filter((char) => {
+        console.log(char)
+        for (let i = 1; i < words.length; i++) {
+            console.log(words[i])
+            if (!words[i].includes(char)) {
+                return false;
+            } else {
+                words[i] = words[i].replace(char, "")
+            }
+        }
+        return true;
+    })
+    
+    return common;
+};
 //      let array =[];
     
 //     for(let i =0;i < words[0].length ; i++){
@@ -38,22 +53,22 @@ var commonChars = function(words) {
 //             }
 //         }
 //     }
-  const common = words[0].split("").filter((char) => {
-        // console.log("char", char)
-        for (let i = 1; i < words.length; i++) {
-            // console.log("words", words[i], i)
-            if (!words[i].includes(char)){
-                return false;
-            } else {
-                words[i] = words[i].replace(char, "");
-            }
-            // console.log("after", i)
-        }
-        return true;
+//   const common = words[0].split("").filter((char) => {
+//         // console.log("char", char)
+//         for (let i = 1; i < words.length; i++) {
+//             // console.log("words", words[i], i)
+//             if (!words[i].includes(char)){
+//                 return false;
+//             } else {
+//                 words[i] = words[i].replace(char, "");
+//             }
+//             // console.log("after", i)
+//         }
+//         return true;
        
-    })
-     return common
-};
+//     })
+//      return common
+// };
     
 
 
