@@ -8,9 +8,7 @@ var MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-    stack = this.stack;
-    
-    stack.push(x)
+       this.stack.push(x)
 };
 
 /**
