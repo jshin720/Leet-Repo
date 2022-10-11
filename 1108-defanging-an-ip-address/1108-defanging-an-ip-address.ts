@@ -1,10 +1,11 @@
 function defangIPaddr(address: string): string {
-    let defanged: string = "";
+//     let defanged: string = "";
     
     
-    for (let char of address) {
-        char === "." ? defanged += "[.]" : defanged += char;
-    }
+//     for (let char of address) {
+//         char === "." ? defanged += "[.]" : defanged += char;
+//     }
     
-    return defanged;
+//     return defanged;
+    return address.split('.').join('[.]');
 };
