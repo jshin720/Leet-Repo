@@ -5,7 +5,7 @@
 <p>Return <em>the <strong>maximum number of words</strong> that appear in a single sentence</em>.</p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+<p><strong class="example">Example 1:</strong></p>
 
 <pre><strong>Input:</strong> sentences = ["alice and bob love leetcode", "i think so too", <u>"this is great thanks very much"</u>]
 <strong>Output:</strong> 6
@@ -16,7 +16,7 @@
 Thus, the maximum number of words in a single sentence comes from the third sentence, which has 6 words.
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre><strong>Input:</strong> sentences = ["please wait", <u>"continue to fight"</u>, <u>"continue to win"</u>]
 <strong>Output:</strong> 3
