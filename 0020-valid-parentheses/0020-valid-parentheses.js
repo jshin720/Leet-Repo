@@ -37,24 +37,47 @@ var isValid = function(s) {
     // }
 
     // return validArr.length === 0
-    if (s.length === 0 || s.length % 2 !== 0) return false;
-    let sArr = s.split("")
-    const valid = [s[0]];
+//     if (s.length === 0 || s.length % 2 !== 0) return false;
+//     let sArr = s.split("")
+//     const valid = [s[0]];
     
-    let left = 0;
+//     let left = 0;
     
-    for (let right = 1; right < s.length; right++) {
-        if (s[right] === ")" && valid[valid.length - 1] === "(") {
-            valid.pop();
-        } else if (s[right] === "]" && valid[valid.length - 1] === "[") {
-            valid.pop();
-        } else if (s[right] === "}" && valid[valid.length - 1] === "{") {
-            valid.pop();
-        } else {
-            valid.push(s[right]);
-        }
+//     for (let right = 1; right < s.length; right++) {
+//         if (s[right] === ")" && valid[valid.length - 1] === "(") {
+//             valid.pop();
+//         } else if (s[right] === "]" && valid[valid.length - 1] === "[") {
+//             valid.pop();
+//         } else if (s[right] === "}" && valid[valid.length - 1] === "{") {
+//             valid.pop();
+//         } else {
+//             valid.push(s[right]);
+//         }
           
+//     }
+    
+//     return valid.length === 0;
+    const validChar = {
+        ")": "(",
+        "}": "{",
+        "]": "["
     }
     
-    return valid.length === 0;
+    const stack = [];
+    
+    
+    for (let char of s) {
+        // console.log(char)
+        if (validChar[char]){
+            const top = stack[stack.length - 1];
+            if (stack.length > 0 && top === validChar[char]) {
+                stack.pop()
+            } else {
+                return false;
+            }
+        } else {
+            stack.push(char);
+        }
+    }
+    return stack.length === 0
 };
