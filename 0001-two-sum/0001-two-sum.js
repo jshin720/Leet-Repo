@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
     
     for (let i = 0; i < nums.length; i++) {
         let num = nums[i]
-         console.log(indices[target - num])
+        
         if (indices[target - num] === undefined) {
             indices[num] = i
         } else {
@@ -17,7 +17,7 @@ var twoSum = function(nums, target) {
             
     }
     
-    console.log(indices)
+   
 
     
 };
