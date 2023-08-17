@@ -3,27 +3,18 @@
  * @return {string[][]}
  */
 var groupAnagrams = function(strs) {
-    const anagrams = {};
+    const grouped = {};
+  
     
     for (let word of strs) {
-        let wordKey = letterKey(word);
+        let sorted = word.split("").sort().join("");
         
-        if (!anagrams[wordKey]) {
-            anagrams[wordKey] = [];
+        if (!grouped[sorted]) {
+            grouped[sorted] = [word];
+        } else {
+            grouped[sorted].push(word);
         }
-        anagrams[wordKey].push(word);
         
     }
-    return Object.values(anagrams);
-};
-
-const letterKey = (word) => {
-    const key = new Array(26).fill(0);
-    
-    for (let i in word) {
-        const charCode = word.charCodeAt(i) - "a".charCodeAt(0);
-        key[charCode]++;
-        // console.log("key", key)
-    }
-    return key;
+  return Object.values(grouped)   
 }
