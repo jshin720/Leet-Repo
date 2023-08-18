@@ -19,11 +19,11 @@ var topKFrequent = function(nums, k) {
     for (let [key, value] of count) {
         sorted.push([key, value]);
     }
-      console.log(count)
-      console.log(sorted)
+      // console.log(count)
+      // console.log(sorted)
     
     const mapped = sorted.sort((a, b) => b[1] - a[1])
-    console.log(mapped)
+    // console.log(mapped)
     let res = [];
     
 
