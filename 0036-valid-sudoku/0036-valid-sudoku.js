@@ -3,31 +3,31 @@
  * @return {boolean}
  */
 var isValidSudoku = function(board) {
-    let rows = {};
-    let cols = {};
-    let box = {};
-
+    const rowSet = new Set(), colSet = new Set(), boxSet = new Set();
     
-    for (let r = 0; r < board.length; r++) {
-        for (let c = 0; c < board[r].length; c++) {
-            let currentVal = board[r][c];
-            
-            if (currentVal === ".") continue;
-            
-            // because the boxes are in a 3x3 grid
-            let boxCoord = `${Math.floor(r/3)},${Math.floor(c/3)}`;
-            
-            if(!rows[r]) rows[r] = new Set();
-            if(!cols[c]) cols[c] = new Set();
-            if (!box[boxCoord]) box[boxCoord] = new Set();
-            
-            if (rows[r].has(currentVal) || cols[c].has(currentVal) || box[boxCoord].has(currentVal)) return false;
-            
-            rows[r].add(currentVal);
-            cols[c].add(currentVal);
-            box[boxCoord].add(currentVal)
-        }
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[i].length; j++) {
+            let row = board[i][j];
+            let col = board[j][i];
+            let box = board[3 * Math.floor(i/3) + Math.floor(j / 3)][((i * 3) % 9) + (j % 3)]
+            if (row !== ".") {
+                if (colSet.has(row)) return false;
+                colSet.add(row);
+            }
+             if (col !== ".") {
+                if (rowSet.has(col)) return false;
+                rowSet.add(col);
+            }
+             if (box !== ".") {
+                if (boxSet.has(box)) return false;
+                boxSet.add(box);
+            }
+            // console.log("rowset", rowSet)
+            // console.log("colset", colSet)
+        }    
+        rowSet.clear();
+        colSet.clear();
+        boxSet.clear();
     }
-    
     return true;
 };
