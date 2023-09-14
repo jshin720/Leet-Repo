@@ -4,24 +4,23 @@
  */
 var isValid = function(s) {
     const valid = [];
-    let firstChar = s[0];
-    valid.push(firstChar);
+    const pairs = { 
+        ")": "(",
+        "}": "{", 
+        "]": "["
+       };
+
     
-    for (let i = 1; i < s.length; i ++) {
-        let lastChar = valid[valid.length -1];
-        
-        if (lastChar === "(" && s[i] === ")") {
-            valid.pop(); 
-        } else if (lastChar === "[" && s[i] === "]") {
-            valid.pop();
-        } else if (lastChar === "{" && s[i] === "}") {
-            valid.pop();
+    for (let char of s) {
+        if (pairs[char] !== undefined) {
+            if (valid[valid.length-1] === pairs[char]){
+                valid.pop();
+            } else {
+                return false;
+            }
         } else {
-            valid.push(s[i]);
+            valid.push(char);
         }
-        
-        
     }
-    
-    return valid.length === 0
+    return valid.length === 0;
 };
