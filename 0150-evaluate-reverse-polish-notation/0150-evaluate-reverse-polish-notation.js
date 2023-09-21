@@ -17,7 +17,7 @@ var evalRPN = function(tokens) {
         } else {
             stack.push(parseInt(char));
         }
-        console.log(stack)
+        // console.log(stack)
     }
     return stack[0];
 };
