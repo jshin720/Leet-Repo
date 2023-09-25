@@ -38,13 +38,12 @@ var evalRPN = function(tokens) {
         if (operators[token]) {
             let num2 = stack.pop();
             let num1 = stack.pop();
-            console.log(num1, num2)
             stack.push(operators[token](num1, num2));
         } else {
             stack.push(parseInt(token))
         }
         
     }
-    console.log(stack)
+   
     return stack.pop();
 }; 
