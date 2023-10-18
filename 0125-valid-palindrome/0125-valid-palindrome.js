@@ -23,7 +23,7 @@ var isPalindrome = function(s) {
             end--
             continue;
         }
-         console.log(s[begin], s[end])
+         // console.log(s[begin], s[end])
         if (s[begin].toLowerCase() !== s[end].toLowerCase()) return false;
         begin++;
         end--;
