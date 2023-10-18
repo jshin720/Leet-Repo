@@ -10,6 +10,7 @@ const alphaNum = (char) => (
 
 
 var isPalindrome = function(s) {
+    if (s.length <= 1) return true;
     
     let begin = 0, end = s.length - 1;
     
@@ -23,7 +24,6 @@ var isPalindrome = function(s) {
             end--
             continue;
         }
-         // console.log(s[begin], s[end])
         if (s[begin].toLowerCase() !== s[end].toLowerCase()) return false;
         begin++;
         end--;
