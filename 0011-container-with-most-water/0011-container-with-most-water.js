@@ -3,19 +3,21 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let most = 0;
+    let maxArea = 0;
     let left = 0;
     let right = height.length - 1;
     
     while (left < right) {
-        const shorter = Math.min(height[right], height[left])
-        const area = (right - left) * shorter;
-        if (area > most) most = area;
+        let waterHeight = Math.min(height[left], height[right]);
+        let currArea = (right - left) * waterHeight;
         
-        height[left] >= height[right] ? right-- : left++
+        if (height[left] <= height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+        maxArea = Math.max(currArea, maxArea)
+        console.log(maxArea)
     }
-    
-   
-    
-    return most
+    return maxArea
 };
