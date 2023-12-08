@@ -7,8 +7,8 @@ var minEatingSpeed = function(piles, h) {
 //     let bph = 0;//bananas per hour
 //     let mid = Math.floor(piles.length / 2);
     
-//     let min = 1;
-//     let max = Math.max(...piles);
+    let left = 1;
+    let right = Math.max(...piles);
     
 //     while (min < max) {
         
@@ -24,7 +24,6 @@ var minEatingSpeed = function(piles, h) {
 
 // };
     
-        let [left, right] = [1, Math.max(...piles)];
 
     while (left < right) {
         const mid = (left + right) >> 1;
