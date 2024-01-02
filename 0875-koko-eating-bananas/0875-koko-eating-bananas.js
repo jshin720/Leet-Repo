@@ -26,14 +26,12 @@ var minEatingSpeed = function(piles, h) {
     
 
     while (left < right) {
-        const mid = (left + right) >> 1;
+        const mid = Math.floor((left + right) / 2) 
         const hourSpent = getHourSpent(mid, piles);
 
-        const isTargetGreater = h < hourSpent;
-        if (isTargetGreater) left = mid + 1;
+        if (h < hourSpent) left = mid + 1;
 
-        const isTargetLess = hourSpent <= h;
-        if (isTargetLess) right = mid;
+        if (hourSpent <= h) right = mid;
     }
 
     return right;
