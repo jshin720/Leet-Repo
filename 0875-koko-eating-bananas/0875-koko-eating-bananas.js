@@ -4,24 +4,19 @@
  * @return {number}
  */
 var minEatingSpeed = function(piles, h) {
-    let bph
     let left = 1;
     let right = Math.max(...piles);
     
     while (left < right) {
         const mid = Math.floor((left + right) / 2) 
         const hourSpent = getHourSpent(mid, piles);
-        // console.log("mid", mid)
-// console.log(hourSpent)
+     
         
         if (hourSpent > h) {
             left = mid + 1;
         } else if (hourSpent <= h) {
             right = mid;  
         } 
-        
-        // console.log("left", left)
-    // console.log("right", right)
     }
     
  
