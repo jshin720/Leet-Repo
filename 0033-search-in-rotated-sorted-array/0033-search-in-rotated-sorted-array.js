@@ -13,18 +13,18 @@ var search = function(nums, target) {
         const midNum = nums[mid];
         const leftNum = nums[left];
         const rightNum = nums[right];
-        console.log(mid)
+        // console.log(mid)
         if (target === midNum) return mid;
         
         if (leftNum <= midNum) {
-            console.log("left")
+            // console.log("left")
             if (target > midNum || target < leftNum) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         } else {
-            console.log("right")
+            // console.log("right")
             if (target < midNum || target > rightNum) {
                 right = mid - 1;
             } else {
