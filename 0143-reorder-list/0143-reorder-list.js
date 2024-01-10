@@ -18,7 +18,7 @@ var reorderList = function(head) {
         fast = fast.next.next;
         
     }
-    // console.log(slow)
+    console.log(slow)
     let secondHalf = slow.next;
     slow.next = null;
     let prev = null;
@@ -31,7 +31,7 @@ var reorderList = function(head) {
             
     } 
 
-    // console.log(prev, "2ndhalf")
+    console.log(prev, "2ndhalf")
     
     let firstHalf = head;
     secondHalf = prev;
