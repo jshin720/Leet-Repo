@@ -13,16 +13,18 @@ var reorderList = function(head) {
     let slow = head;
     let fast = head.next;
     
+    //finding mid
     while (fast && fast.next) {
         slow = slow.next;
         fast = fast.next.next;
         
     }
-    console.log(slow)
+    // console.log(slow)
     let secondHalf = slow.next;
     slow.next = null;
     let prev = null;
     
+    //reverse second half
     while (secondHalf) {
         let temp = secondHalf.next;
         secondHalf.next = prev;
@@ -31,11 +33,13 @@ var reorderList = function(head) {
             
     } 
 
-    console.log(prev, "2ndhalf")
+    // console.log(prev, "2ndhalf")
     
     let firstHalf = head;
     secondHalf = prev;
     
+    
+    //merge the 2 halves
     while (secondHalf) {
         let temp1 = firstHalf.next;
         let temp2 = secondHalf.next;
