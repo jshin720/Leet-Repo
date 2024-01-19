@@ -13,7 +13,7 @@ var findDuplicate = function(nums) {
             break
         }
     }
-    console.log(slow, fast)
+    // console.log(slow, fast)
     let slow2 = 0;
     while (true) {
         slow = nums[slow];
