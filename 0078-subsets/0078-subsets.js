@@ -4,7 +4,7 @@
  */
 var subsets = (nums) => {
     nums.sort((a, b) => a -b);
-
+    console.log(nums)
     return dfs(nums)
 }
 
