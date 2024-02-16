@@ -22,6 +22,7 @@ const dfs = (nums, index = 0, set = [], subset = []) => {
 }
 
 const backTrack = (nums, i, set, subset) => {
+    console.log(nums)
     set.push(nums[i]);
         dfs(nums, (i + 1), set, subset);
     set.pop();
