@@ -3,31 +3,20 @@
  * @return {boolean}
  */
 
-const alphaNum = (char) => (
-     char.toLowerCase() >= "a" && char.toLowerCase() <= "z" || char >= "0" && char <= "9"
-)
-   
-
-
 var isPalindrome = function(s) {
-    if (s.length <= 1) return true;
-    
-    let begin = 0, end = s.length - 1;
-    
-    while(begin < end) {
-       
-        if (!alphaNum(s[begin])) {
-            begin++
-            continue
-        }
-        if(!alphaNum(s[end])) {
-            end--
-            continue;
-        }
-        if (s[begin].toLowerCase() !== s[end].toLowerCase()) return false;
-        begin++;
-        end--;
-    }   
-    return true; 
+ let noSpaces = s.replace(/[^a-zA-Z0-9]/g, '').split(" ").join("");
+
+ if (noSpaces.length === 0 || noSpaces === null) return true;
+
+ let back = noSpaces.length - 1;
+
+ for (let i = 0; i < noSpaces.length; i++) {
+    // console.log(noSpaces[i], "forward")
+    // console.log(noSpaces[back], "back")
+    if (noSpaces[i].toLowerCase() !== noSpaces[back].toLowerCase()) return false;
+    back--;
+ }
+
+  return true;
 };
 
