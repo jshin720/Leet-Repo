@@ -4,14 +4,14 @@
  */
 var threeSum = function(nums) {
     const ans = [];
-    nums = nums.sort((a, b) => a - b);
-    
-   
-   for (let i = 0; i < nums.length; i++) {
-       let numI = nums[i];
-       let left = i + 1;
-       let right = nums.length - 1;
-       
+    nums = nums.sort((a, b) => a - b)
+
+    for (let i = 0; i < nums.length; i++) {
+        let numI = nums[i];
+
+        let left = i + 1;
+        let right = nums.length - 1;
+        
        if (i > 0 && numI === nums[i - 1] ) continue;
        
        while (left  < right) {
@@ -32,8 +32,6 @@ var threeSum = function(nums) {
                right--;
            }
        }
-       
    }
-    
-    return ans; 
+   return ans;
 };
